@@ -6,7 +6,7 @@ on:
 jobs:
   pull_from_svn:
     name: Get changes from svn
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
