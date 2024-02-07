@@ -1,0 +1,18 @@
+name: Update github with svn changes
+
+on:
+  workflow_dispatch
+
+jobs:
+  pull_from_svn:
+    name: Get changes from svn
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get changes
+        run: git svn fetch && git svn rebase
+
+      - name: Push changes
+        run: git push origin main
