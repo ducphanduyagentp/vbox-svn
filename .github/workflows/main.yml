@@ -11,6 +11,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install git-svn
+        run: apt-get update && apt-get -y install git-svn subversion
+
       - name: Get changes
         run: git svn fetch && git svn rebase
 
