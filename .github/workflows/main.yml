@@ -11,6 +11,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Remove new git
+        run: sudo apt-get remove -y git git-man && sudo add-apt-repository --remove -y ppa:git-core/ppa
+      
       - name: Install git-svn
         run: sudo apt-get update && sudo apt-get -y install git git-svn subversion
 
